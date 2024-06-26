@@ -20,8 +20,8 @@ for message in st.session_state.messages:
 # load the model once and use it across all users and sessions
 @st.cache_resource
 def load_model():
-    # pp = keras_nlp.models.GemmaCausalLMPreprocessor.from_preset('gemma_1.1_instruct_2b_en', sequence_length=128)
-    return keras_nlp.models.GemmaCausalLM.from_preset('gemma_1.1_instruct_2b_en', preprocessor=None)
+    pp = keras_nlp.models.GemmaCausalLMPreprocessor.from_preset('gemma_1.1_instruct_2b_en', sequence_length=128)
+    return keras_nlp.models.GemmaCausalLM.from_preset('gemma_1.1_instruct_2b_en', preprocessor=pp)
 gemma_lm = load_model()
 
 # react to user input
