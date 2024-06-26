@@ -31,7 +31,7 @@ if prompt := st.chat_input('what is up?'):
     # display user message in chat message container
     with st.chat_message('user'):
         st.markdown(prompt)
-    answer = gpt2_lm.generate(prompt, max_length=128)
+    answer = gemma_lm.generate(prompt, max_length=128)
     def stream_data():
         for word in answer.split(' '):
             yield word + ' '
